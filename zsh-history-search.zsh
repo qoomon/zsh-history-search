@@ -41,7 +41,8 @@ function _history_argument_widget {
   if [[ ${LBUFFER_ORIGIN} == *' ' ]] && [[ ! ${query} == *' ' ]]; then
     query=''
   fi
-  local argument=$(history -n 0 | tail -n $HISTORY_ARGUMENT_SEARCH_LIMIT | (while read line; do echo ${(j:\n:)${(z)line}}; done) | nl | sort -uk2 | sort -nk1 | cut -f2- | \
+
+  local argument=$(history -n 0 | tail -n $HISTORY_ARGUMENT_SEARCH_LIMIT | (while read line; do echo ${(j:\n:)${(z)line}}; done) | nl | sort -rk2 | sort -uk2 | sort -nk1 | cut -f2- | \
       fzf --height 10 --reverse --tac --exact --no-sort --query=${query} --select-1)   
 
   if [ -n ${argumen} ]; then
