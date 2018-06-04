@@ -42,6 +42,7 @@ source zsh-history-search/zsh-history-search.zsh
 
 ## Configure
 add following snippet to your `.zshrc`
+to bind history search to `ctrl + R` and history argument search to `ctrl + SPACE`
 ```shell
 ### Plugin Config - zsh-history-search ###
 if type fzf >/dev/null; then
@@ -54,3 +55,5 @@ if type fzf >/dev/null; then
   bindkey '^@' _history_argument_widget 
 fi
 ```
+adjust how many history commands should be considered in argument search
+`HISTORY_ARGUMENT_SEARCH_LIMIT=1000` (default value)
