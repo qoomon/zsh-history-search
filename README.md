@@ -1,7 +1,5 @@
 # zsh-history-fzf
-## Usage
- => fzf history search 
-``
+
 ## Usage
 
 | key            |                                                           |
