@@ -1,4 +1,14 @@
 # zsh-history-fzf
+## Usage
+ => fzf history search 
+``
+## Usage
+
+| key            |                                                           |
+|---             |---                                                        |
+| `ctrl + R`     | search with fzf for history commands                      |
+| `ctrl + SPACE` | complete argument with fzf with history command arguments |
+
 
 ## Install
 
