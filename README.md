@@ -1,4 +1,4 @@
-# zsh-history-fzf
+# zsh-history-search
 
 ## Usage
 
