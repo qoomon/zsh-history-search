@@ -29,14 +29,14 @@ antigen apply
 ```
 ### [Oh My ZSH! custom plugin](http://ohmyz.sh/)
 ```
-git clone https://github.com/qoomon/zjump $ZSH_CUSTOM/plugins/zsh-history-search
+git clone https://github.com/zsh-history-search/zjump $ZSH_CUSTOM/plugins/zsh-history-search
 plugins+=(k)
 ```
 ### [zplug](https://github.com/zplug/zplug)
 `zplug "qoomon/zsh-history-search"`
 ### manually
 ```
-git clone https://github.com/qoomon/zjump.git
+git clone https://github.com/qoomon/zsh-history-search.git
 source zsh-history-search/zsh-history-search.zsh
 ```
 
