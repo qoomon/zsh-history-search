@@ -1,3 +1,8 @@
+# check for fzf installed
+if ! [ $commands[fzf] ]; then
+  echo "[zsh-history-search]: couldn't find fzf installation" >&2
+  echo "[zsh-history-search]: please install fzf in order to use zjump" >&2
+fi
 
 function _history_search_widget {
 
@@ -58,12 +63,10 @@ function _history_search_argument_widget {
 
 # Key Bindings #################################################################
 
-if [ $commands[fzf] ]; then
-  zle -N _history_search_widget
-  # bind ctrl + r
-  bindkey '^R' _history_search_widget 
-  
-  zle -N _history_search_argument_widget
-  # bind ctrl + space
-  bindkey '^@' _history_search_argument_widget 
-fi
+zle -N _history_search_widget
+# bind CTRL + R
+bindkey '^R' _history_search_widget 
+
+zle -N _history_search_argument_widget
+# bind CTRL + SPACE
+bindkey '^@' _history_search_argument_widget 
