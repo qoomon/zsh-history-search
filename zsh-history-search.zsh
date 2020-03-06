@@ -1,5 +1,5 @@
 
-function _history_widget {
+function _history_search_widget {
 
   local BUFFER_ORIGIN=${BUFFER}
   local CURSOR_ORIGIN=${CURSOR}
@@ -26,7 +26,7 @@ function _history_widget {
 
 HISTORY_ARGUMENT_SEARCH_LIMIT=1000 # default
 
-function _history_argument_widget {
+function _history_search_argument_widget {
 
   BUFFER_ORIGIN=${BUFFER}
   CURSOR_ORIGIN=${CURSOR}
@@ -55,3 +55,15 @@ function _history_argument_widget {
 
   zle redisplay
 }
+
+# Key Bindings #################################################################
+
+if [ $commands[fzf] ]; then
+  zle -N _history_search_widget
+  # bind ctrl + r
+  bindkey '^R' _history_search_widget 
+  
+  zle -N _history_search_argument_widget
+  # bind ctrl + space
+  bindkey '^@' _history_search_argument_widget 
+fi
