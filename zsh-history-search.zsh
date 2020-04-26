@@ -16,7 +16,7 @@ function _history_search_widget {
   local query=${BUFFER_ORIGIN} # whole command
 
   local cmd=$(history -n 0 | \
-      fzf --height 10 --reverse --tac --exact --no-sort --query=${query} --select-1)
+      fzf --height 10 --reverse --tac --no-sort --query=${query} --select-1)
 
   if [ -n ${cmd} ]; then
     BUFFER="${cmd}"
@@ -48,7 +48,7 @@ function _history_search_argument_widget {
   fi
 
   local argument=$(history -n 0 | tail -n $HISTORY_ARGUMENT_SEARCH_LIMIT | (while read line; do echo ${(j:\n:)${(z)line}}; done) | nl | sort -rk2 | sort -uk2 | sort -nk1 | cut -f2- | \
-      fzf --height 10 --reverse --tac --exact --no-sort --query=${query} --select-1)   
+      fzf --height 10 --reverse --tac --no-sort --query=${query} --select-1)   
 
   if [ -n ${argumen} ]; then
     BUFFER="${LBUFFER_ORIGIN%$query}${argument}${RBUFFER_ORIGIN}"
